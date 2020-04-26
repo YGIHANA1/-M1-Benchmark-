@@ -16,72 +16,227 @@ body
 {
 background-color:coral;
    
-max-width:75% ;
-border-radius: 45%;
+max-width:100% ;
+text-align: center;
 }
 h1
 {
 text-align:center;
 }
-#table{
-margin:1px;
-padding:1px;
-border:3px solid;
+#table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 400%;
+  display:grid;
+  
 }
 .p1{
 
 margin: 2px;
 font-size:25px;
 }
-p2{
+.p2{
  margin:2px;
  font-size:9px;   
 }
-.td{
-  border-color: green;  
+td, th {
+  border: 1px solid green;
+  border-radius:120%;
+  text-align: center;
+  padding: 10px;
 }
-.tr{
- border-color: red;   
+ 
+tr:nth-child(even){
+  color: red;
+ border:dotted 1px solid;
 }
 .hr{
 color:blue;
+max-width:100%;
 }
+#footer{
+  display:block;
+  background:rgb(255, 238, 0); 
+  max-width:300%;
+
+}
+h1{
+    text-align:center;
+}
+a:link, a:visited {
+  background-color: #f44336;
+}
+.border {
+    border-radius: 50px;
+
+  }
+list{
+   hover:green; 
+}  
 </style>
 <body class='body'>
-<h1>Hello this a new page</h1>
-<div>
-<p1 class='p1'>this is the first paragraph</p1>
-<p2 class='p2'>this the second paragraph</p2>
-</div>
-<div id='table'>
-<table>
+<h1 id='h1'>Hello this a new page</h1>
 <ol class="ol">
 <li>A</li>
-<li>b</li>
+<li>B</li>
 <li>C</li>
 </ol>
-<td class='td'>
-<tr>1st</tr>
-</td>  
-<td>
-<tr>2st<tr class='tr'><img src='descarga.jpeg' alt='Lion King'> 
-</td>
-<td></tr>3rd</tr></td>
-<td><tr>4th</tr></td>
-<td>5th</td>
-
+<div class='container'>
+first Name:<input type='text' name='fname' id="fname"/><br/><br/>
+   last Name:<input type='text' name='lname' id='lname'/><br/><br/>
+   age: <input type='text' name='age' id='age'/><br/><br/> 
+   email: <input type='text' name='email' id='email'/><br/><br/>
+   address: <input type='text' name='address' id='address'/><br/><br/>
+<button onclick='addRow();'>add Row</button>
+<table border='10'>
+    <tr>
+        <th>fname</th>
+        <th> lname</th>
+        <th>Age</th>
+        <th>email</th>
+        <th>address</th>
+ </tr>
+      <tr>
+         <td>Billy</td>
+         <td>white</td>
+         <td>25</td> 
+         <td>jakana1@gmail.com</td>  
+         <td>Spain</td> 
+         <td><img src='Art&music.jpg' alt='music&art'></td>            
+    </tr>  
+    <tr>
+        <td>Yannick</td>
+        <td>yellow</td>
+        <td>30</td> 
+        <td>ella@gmail.com</td>  
+        <td>FRANCE</td> 
+        <td><img src='big rock.jpg' alt='Big rocks'></td>             
+   </tr>  
+   <tr>
+    <td>chris</td>
+    <td>blue</td>
+    <td>23</td> 
+    <td>kena@gmail.com</td>  
+    <td>USA</td>
+    <td><img src='lovely dog.jpg' alt='dog lay on the bed'></td>              
+</tr>  
 </table>
 </div>
-<div id='UL'>    
- <p>this is strive link <a href=https://strive.school/optin32129918>striveschool</a></p>
-    <ul> 
+<p><br>these are images with their links<a href='https://images.pexels.com/photos/814499/pexels-photo-814499.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'><img width='10px'  alt='lake'></a><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR5WkPE0PRcGNCJVLY-nv2FdoBTSalTPvkoBaMdQbQeWrosHgnS&usqp=CAU"><img width='1px' alt='a lonely house in a  forest with a lake in front'></a>
+<hr type='hr'>
+<div id='container'> 
+<p1 class='p1'>this is the first paragraph</p1>
+<p2 class='p2'>this the second paragraph</p2>      
+<p>this is strive link <a href=https://strive.school/optin32129918>striveschool</a></p>
+<button onclick='removeLI()' class='list'>REMOVE LIST</button>
+<ul id='myList'> 
 <li>Y</li>
 <li>G</li>
 <li>M</li>    
-</ul>    
+</ul> 
 </div>
-<hr type='hr'>
-<footer>
+<div class='border'>   
+</div>
+<p3 id='demo'>this the random numbers from 0 to 100<p3>
+<p4 id='max'>Max of the previous number</p4>
+<p5 id='min'>Min of the previous number</p5>  
+<script>
+let x= "John"
+let y="Doe"
+console.log(x+y)
+let objects= { name:'Yannick', surname:'Gihana', email:'Ygihana@gmail.com'};
+document.querySelector('objects').innerHTML=objects
+function removeTheLast(){
+    objects.pop();
+    document.querySelectorAll.innerHTML=objects
+    console.log(removeTheLast(objects))
+}
+let array=['Chris','guy','Hugue','Peter','Serge','kiriku','Oscar','Levy','Lewis','Christian'];
+consol.log(array.length)
+document.getElementById('demo').innerHTTML=Math.floor(Math.Random()*101)
+let r=Math.floor(Math.Random()*101)
+console.log(r)
+let getRandomNumber =function(min,max){
+let getRandom=Math.floor((Math.random()*max)+ min);
+while(getRandom > max){
+    getRandom = Math.floor((Math.random()*max)+min);
+}
+return getRandom();
+ }
+console.log(getRandomNumber(299.500));
+getRandomNumber(299,500);
+
+function arrayOfArray(){
+    var answr=[]
+let randomLoop =Math.floor(Math.random()*10);
+for(var i=0; i < randomLoop.length;i++ ){
+ var longestNumber=0;
+ for(var lg=0; lg < randomLoop[i].length; ld++){
+  if(randomLoop[i][lg] > longestNumber){  
+ longestNumber = randomLoop[i][lg];
+    }  
+}
+answr[i] = longestNumber;
+}
+return answr;
+}
+
+function sum(){
+return q*t;
+}
+console.log(sum(3,5));
+
+let tableData= document.querySectorAll('td').innerHTML
+
+var newHead = document.getElementById('h1');
+newHead.innerHTML='changing the text';
+ 
+ function addRow(){
+var fname = document.getElementById('fname').value;
+var lname = document.getElementById('lname').value;
+var age = document.getElementById('age').value;
+var email = document.getElementById('email').value;
+var address=document.getElementById('address').value;
+var table =document.getElementsByTagName('table')[0];
+
+ var newRow = table.insertRow(1);
+
+ var cel1= newRow.insertCell(0);
+ var cel2= newRow.insertCell(1);
+ var cel3= newRow.insertCell(2);
+ var cel4= newRow.insertCell(3);
+ var cel5= newRow.insertCell(4);
+
+ cel1.innerHTML = fname;
+ cel2.innerHTML = lname;
+ cel3.innerHTML= age; 
+ cel4.innerHTML = email;
+ cel5.innerHTML= address; 
+ 
+ }
+ const myList = document.getElementById('myList'); 
+  
+ let newListItem= document.createElement('li');
+ newListItem.textcContent ='R';
+ myList.appendchild(newListItem) ;
+
+ var items=document.querySelectorAll('#mylist')
+ tab =[],LiIndex;
+
+ for(var i=0;i < items.length;i++){
+     tab.push(items[i].innerHTML);
+ }
+ for(var i= 0; i < items.length;i++){
+   items[i].onclick= function(){
+       LiIndex = tab.indexOf(this.innerHTML)
+       console.log(this.innerHTML + 'INDEX =' + LiIndex )
+   };
+ }
+ function rremoveLi(){
+     items[LiIndex].parentNode.removeVhild(items[LiIndex]);
+ }
+</script>
+<footer id='footer'>
     <p>Posted by: Yannick Gihana</p>
     <div class="icon">
         <p><i class="fab fa-linkedin"></i>Gihanayannick@linkedin</p>
@@ -95,4 +250,4 @@ color:blue;
     <p>Contact information: <a href="Ygihana@gmail.com">Ygihana@gmail.com.</a>.</p>   
 </footer>
 </body>
-</hmtl>
+</html>
